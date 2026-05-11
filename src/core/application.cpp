@@ -27,8 +27,12 @@ bool Application::Init() {
     icc.dwICC = ICC_STANDARD_CLASSES | ICC_BAR_CLASSES;
     InitCommonControlsEx(&icc);
 
-    if (!config_.load("assets/config/settings.json")) {
-        Logger::warn("Using default configuration");
+    std::string config_path = "assets/config/settings.json";
+    if (!config_.load(config_path)) {
+        config_path = "../../assets/config/settings.json";
+        if (!config_.load(config_path)) {
+            Logger::warn("Using default configuration");
+        }
     }
 
     if (!window_.Create("WallpaperEngineClone", 0, 0, false)) {
@@ -80,8 +84,12 @@ bool Application::InitVideo() {
 
     std::string video_path = config_.video_path();
     if (!mpv_player_.LoadMedia(video_path)) {
-        Logger::warn("Video file not found: " + video_path);
-        return false;
+        // Try relative path for build directory
+        std::string alt_path = "../../" + video_path;
+        if (!mpv_player_.LoadMedia(alt_path)) {
+            Logger::warn("Video file not found: " + video_path + " (and alt: " + alt_path + ")");
+            return false;
+        }
     }
 
     mpv_player_.SetLooping(true);

@@ -55,30 +55,6 @@ bool MpvPlayer::LoadFunctions() {
     return true;
 }
 
-    if (!mpv_dll_) {
-        Logger::error("Could not load mpv DLL (libmpv-2.dll, mpv-1.dll or libmpv.dll)");
-        return false;
-    }
-
-    _mpv_create = (mpv_create_t)GetProcAddress(mpv_dll_, "mpv_create");
-    _mpv_initialize = (mpv_initialize_t)GetProcAddress(mpv_dll_, "mpv_initialize");
-    _mpv_terminate_destroy = (mpv_terminate_destroy_t)GetProcAddress(mpv_dll_, "mpv_terminate_destroy");
-    _mpv_set_option_string = (mpv_set_option_string_t)GetProcAddress(mpv_dll_, "mpv_set_option_string");
-    _mpv_command_string = (mpv_command_string_t)GetProcAddress(mpv_dll_, "mpv_command_string");
-    _mpv_get_property = (mpv_get_property_t)GetProcAddress(mpv_dll_, "mpv_get_property");
-    _mpv_set_property = (mpv_set_property_t)GetProcAddress(mpv_dll_, "mpv_set_property");
-
-    if (!_mpv_create || !_mpv_initialize || !_mpv_terminate_destroy || 
-        !_mpv_set_option_string || !_mpv_command_string || !_mpv_get_property || !_mpv_set_property) {
-        Logger::error("Failed to load one or more mpv functions from DLL");
-        FreeLibrary(mpv_dll_);
-        mpv_dll_ = nullptr;
-        return false;
-    }
-
-    return true;
-}
-
 bool MpvPlayer::Initialize() {
     if (!LoadFunctions()) return false;
 
