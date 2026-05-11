@@ -1,7 +1,6 @@
 #include "mpv_player.h"
 #include "utils/logger.h"
 
-#include <mpv/client.h>
 #include <algorithm>
 #include <iostream>
 
@@ -11,45 +10,78 @@ MpvPlayer::~MpvPlayer() {
     Shutdown();
 }
 
+bool MpvPlayer::LoadFunctions() {
+    const char* dll_names[] = { "libmpv-2.dll", "mpv-1.dll", "libmpv.dll" };
+    
+    for (const char* name : dll_names) {
+        mpv_dll_ = LoadLibraryA(name);
+        if (mpv_dll_) break;
+    }
+
+    if (!mpv_dll_) {
+        Logger::error("Could not load mpv DLL (libmpv-2.dll, mpv-1.dll or libmpv.dll)");
+        return false;
+    }
+
+    _mpv_create = (mpv_create_t)GetProcAddress(mpv_dll_, "mpv_create");
+    _mpv_initialize = (mpv_initialize_t)GetProcAddress(mpv_dll_, "mpv_initialize");
+    _mpv_terminate_destroy = (mpv_terminate_destroy_t)GetProcAddress(mpv_dll_, "mpv_terminate_destroy");
+    _mpv_set_option_string = (mpv_set_option_string_t)GetProcAddress(mpv_dll_, "mpv_set_option_string");
+    _mpv_command_string = (mpv_command_string_t)GetProcAddress(mpv_dll_, "mpv_command_string");
+    _mpv_get_property = (mpv_get_property_t)GetProcAddress(mpv_dll_, "mpv_get_property");
+    _mpv_set_property = (mpv_set_property_t)GetProcAddress(mpv_dll_, "mpv_set_property");
+
+    if (!_mpv_create || !_mpv_initialize || !_mpv_terminate_destroy || 
+        !_mpv_set_option_string || !_mpv_command_string || !_mpv_get_property || !_mpv_set_property) {
+        Logger::error("Failed to load one or more mpv functions from DLL");
+        FreeLibrary(mpv_dll_);
+        mpv_dll_ = nullptr;
+        return false;
+    }
+
+    return true;
+}
+
 bool MpvPlayer::Initialize() {
-    handle_ = mpv_create();
-    if (!handle_) {
+    if (!LoadFunctions()) return false;
+
+    mpv_handle_ = _mpv_create();
+    if (!mpv_handle_) {
         Logger::error("mpv_create failed");
         return false;
     }
 
-    // Initialize mpv options
-    // We use "wid" to attach mpv to our window
-    // We use "vo=gpu" for hardware acceleration on Windows
-    mpv_set_option_string(handle_, "vo", "gpu");
-    mpv_set_option_string(handle_, "hwdec", "auto");
+    _mpv_set_option_string(mpv_handle_, "vo", "gpu");
+    _mpv_set_option_string(mpv_handle_, "hwdec", "auto");
     
-    // Initialize mpv
-    if (mpv_initialize(handle_) == mpv_ERROR_C_FAILED) {
+    if (_mpv_initialize(mpv_handle_) < 0) {
         Logger::error("mpv_initialize failed");
-        mpv_terminate_destroy(handle_);
-        handle_ = nullptr;
+        _mpv_terminate_destroy(mpv_handle_);
+        mpv_handle_ = nullptr;
         return false;
     }
 
-    Logger::info("mpv player initialized");
+    Logger::info("mpv player initialized (dynamically)");
     return true;
 }
 
 void MpvPlayer::Shutdown() {
-    if (handle_) {
-        mpv_terminate_destroy(handle_);
-        handle_ = nullptr;
+    if (mpv_handle_) {
+        _mpv_terminate_destroy(mpv_handle_);
+        mpv_handle_ = nullptr;
+    }
+    if (mpv_dll_) {
+        FreeLibrary(mpv_dll_);
+        mpv_dll_ = nullptr;
     }
     Logger::info("mpv player shutdown");
 }
 
 bool MpvPlayer::LoadMedia(const std::string& file_path) {
-    if (!handle_) return false;
+    if (!mpv_handle_) return false;
 
-    // Command to load file: loadfile "path"
     std::string cmd = "loadfile \"" + file_path + "\"";
-    if (mpv_command_string(handle_, cmd.c_str()) < 0) {
+    if (_mpv_command_string(mpv_handle_, cmd.c_str()) < 0) {
         Logger::error("mpv: failed to load media: " + file_path);
         return false;
     }
@@ -59,49 +91,49 @@ bool MpvPlayer::LoadMedia(const std::string& file_path) {
 }
 
 void MpvPlayer::SetOutputWindow(void* hwnd) {
-    if (handle_ && hwnd) {
+    if (mpv_handle_ && hwnd) {
         output_hwnd_ = (HWND)hwnd;
-        // mpv expects the window ID as a string for the 'wid' option
         std::string wid_str = std::to_string((uintptr_t)hwnd);
-        mpv_set_option_string(handle_, "wid", wid_str.c_str());
+        _mpv_set_option_string(mpv_//_ corregir
+            mpv_handle_, "wid", wid_str.c_str());
     }
 }
 
 bool MpvPlayer::Play() {
-    if (!handle_) return false;
-    mpv_command_string(handle_, "set property pause no");
+    if (!mpv_handle_) return false;
+    _mpv_command_string(mpv_handle_, "set property pause no");
     Logger::info("mpv Playback started");
     return true;
 }
 
 void MpvPlayer::Pause() {
-    if (handle_) {
-        mpv_command_string(handle_, "set property pause yes");
+    if (mpv_handle_) {
+        _mpv_command_string(mpv_handle_, "set property pause yes");
         Logger::info("mpv Playback paused");
     }
 }
 
 void MpvPlayer::Stop() {
-    if (handle_) {
-        mpv_command_string(handle_, "stop");
+    if (mpv_handle_) {
+        _mpv_command_string(mpv_handle_, "stop");
         Logger::info("mpv Playback stopped");
     }
 }
 
 bool MpvPlayer::IsPlaying() const {
-    if (!handle_) return false;
+    if (!mpv_handle_) return false;
     
     int pause = 0;
-    if (mpv_get_property(handle_, "pause", MPV_FORMAT_INT, &pause) == mpv_ERROR_C_OK) {
+    if (_mpv_get_property(mpv_handle_, "pause", 1, &pause) == 0) { // 1 is MPV_FORMAT_INT
         return pause == 0;
     }
     return false;
 }
 
 void MpvPlayer::SetLooping(bool loop) {
-    if (!handle_) return;
+    if (!mpv_handle_) return;
     looping_ = loop;
-    mpv_set_option_string(handle_, "loop-file", loop ? "inf" : "no");
+    _mpv_set_option_string(mpv_handle_, "loop-file", loop ? "inf" : "no");
     Logger::info(std::string("mpv Looping ") + (loop ? "enabled" : "disabled"));
 }
 
@@ -110,18 +142,18 @@ bool MpvPlayer::IsLooping() const {
 }
 
 float MpvPlayer::Position() const {
-    if (!handle_) return 0.0f;
+    if (!mpv_handle_) return 0.0f;
     double pos = 0.0;
-    if (mpv_get_property(handle_, "time-pos", MPV_FORMAT_DOUBLE, &pos) == mpv_ERROR_C_OK) {
+    if (_mpv_get_property(mpv_handle_, "time-pos", 2, &pos) == 0) { // 2 is MPV_FORMAT_DOUBLE
         return static_cast<float>(pos);
     }
     return 0.0f;
 }
 
 float MpvPlayer::Duration() const {
-    if (!handle_) return 0.0f;
+    if (!mpv_handle_) return 0.0f;
     double dur = 0.0;
-    if (mpv_get_property(handle_, "duration", MPV_FORMAT_DOUBLE, &dur) == mpv_ERROR_C_OK) {
+    if (_mpv_get_property(mpv_handle_, "duration", 2, &dur) == 0) {
         return static_cast<float>(dur);
     }
     return 0.0f;
@@ -129,38 +161,35 @@ float MpvPlayer::Duration() const {
 
 void MpvPlayer::SetOnEndReached(EventCallback callback) {
     on_end_reached_ = std::move(callback);
-    // Note: To properly implement on_end_reached in mpv, we would need 
-    // to set up mpv_set_wakeup_callback or poll for property changes.
-    // For this structural migration, we keep the interface.
 }
 
 void MpvPlayer::SetVolume(int volume) {
-    if (!handle_) return;
+    if (!mpv_handle_) return;
     volume_ = std::clamp(volume, 0, 100);
     double vol_double = volume_ / 100.0;
-    mpv_set_property(handle_, "volume", MPV_FORMAT_DOUBLE, &vol_double);
+    _mpv_set_property(mpv_handle_, "volume", 2, &vol_double); // 2 is MPV_FORMAT_DOUBLE
 }
 
 int MpvPlayer::GetVolume() const {
-    if (!handle_) return volume_;
+    if (!mpv_handle_) return volume_;
     double vol_double = 0.0;
-    if (mpv_get_property(handle_, "volume", MPV_FORMAT_DOUBLE, &vol_double) == mpv_ERROR_C_OK) {
+    if (_mpv_get_property(mpv_handle_, "volume", 2, &vol_double) == 0) {
         return static_cast<int>(vol_double * 100.0);
     }
     return volume_;
 }
 
 void MpvPlayer::SetMute(bool mute) {
-    if (!handle_) return;
+    if (!mpv_handle_) return;
     muted_ = mute;
     int mute_val = mute ? 1 : 0;
-    mpv_set_property(handle_, "mute", MPV_FORMAT_INT, &mute_val);
+    _mpv_set_property(mpv_handle_, "mute", 1, &mute_val); // 1 is MPV_FORMAT_INT
 }
 
 bool MpvPlayer::IsMuted() const {
-    if (!handle_) return muted_;
+    if (!mpv_handle_) return muted_;
     int mute_val = 0;
-    if (mpv_get_property(handle_, "mute", MPV_FORMAT_INT, &mute_val) == mpv_ERROR_C_OK) {
+    if (_mpv_get_property(mpv_handle_, "mute", 1, &mute_val) == 0) {
         return mute_val != 0;
     }
     return muted_;

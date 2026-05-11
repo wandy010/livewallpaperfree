@@ -17,11 +17,9 @@ file(GLOB_RECURSE SOURCES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
 add_executable(${PROJECT_NAME} WIN32 ${SOURCES})
 
-# ── mpv (Replaces Media Foundation) ───────────────────────────────────────
-# Make sure you have mpv-1.dll and mpv.lib installed
-target_link_libraries(${PROJECT_NAME}
-    mpv
-)
+# ── mpv (Dynamic Loading) ───────────────────────────────────────────────
+# No static linking needed as we use LoadLibrary for libmpv
+
 
 # ── Librerías de Windows ─────────────────────────────────────────────────
 target_link_libraries(${PROJECT_NAME}
