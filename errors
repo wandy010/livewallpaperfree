@@ -1,104 +1,48 @@
- 1>Checking Build System
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/pc-1/Documents/livewallpaperfree/build
+[STEP] Compilando...
+Versión de MSBuild 17.14.40+3e7442088 para .NET Framework
+
+  1>Checking Build System
   Building Custom Rule C:/Users/pc-1/Documents/livewallpaperfree/CMakeLists.txt
-  mf_player.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(286,10): error C2065: 'IMFMediaSource': id
-entificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(286,26): error C2065: 'pMediaSource': iden
-tificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(287,29): error C2065: 'pAttributes': ident
-ificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(287,14): error C2275: 'IMFAttributes': se
-esperaba una expresión en lugar de un tipo [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxpro
-j]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(288,29): error C2065: 'ppSourceReader': id
-entificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(288,11): error C2275: 'IMFSourceReader': s
-e esperaba una expresión en lugar de un tipo [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxp
+  config_manager.cpp
+  json_loader.cpp
+  application.cpp
+  message_loop.cpp
+C:\Users\pc-1\Documents\livewallpaperfree\src\core\application.cpp(14,22): error C2065: 'mf_player_': identificador no
+declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\core\application.cpp(15,22): error C2065: 'mf_player_': identificador no
+declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+  window.cpp
+  main.cpp
+  fullscreen_detector.cpp
+  monitor_manager.cpp
+  process_monitor.cpp
+  visibility_detector.cpp
+  settings_window.cpp
+  tray_icon.cpp
+  volume_slider.cpp
+  file_utils.cpp
+  logger.cpp
+  timers.cpp
+  audio_controller.cpp
+  media_controller.cpp
+  mpv_player.cpp
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(97,32): error C2065: 'mpv_': identificador no declar
+ado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,13): error C2146: error de sintaxis: falta ')' de
+lante del identificador 'mpv_handle_' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,13): error C2146: error de sintaxis: falta ';' de
+lante del identificador 'mpv_handle_' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,48): error C2059: error de sintaxis: ')' [C:\User
+s\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,46): warning C4834: Descartar el valor de retorno
+ de la función con el atributo [[nodiscard]] [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxp
 roj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(285,8): warning C4229: se ha utilizado un
-anacronismo: se omiten los modificadores de datos [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone
-.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1201,10): error C2065: 'IMFMediaSink': ide
-ntificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1201,24): error C2065: 'pMediaSink': ident
-ificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1202,29): error C2065: 'pAttributes': iden
-tificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1202,14): error C2275: 'IMFAttributes': se
- esperaba una expresión en lugar de un tipo [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxpr
-oj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1203,27): error C2065: 'ppSinkWriter': ide
-ntificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1203,11): error C2275: 'IMFSinkWriter': se
- esperaba una expresión en lugar de un tipo [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxpr
-oj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(1200,8): warning C4229: se ha utilizado un
- anacronismo: se omiten los modificadores de datos [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClon
-e.vcxproj]
-  (compilando archivo de origen "../src/video/mf_player.cpp")
-
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(18,37): error C2504: 'IMFMediaSessionEventCallback':
-clase base sin definir [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(23,26): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(27,39): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(38,36): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(39,30): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(40,33): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(23,5): error C3668: 'SessionEventCallback::OnStopped'
-: el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\Docu
-ments\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(27,5): error C3668: 'SessionEventCallback::OnPlayback
-StoppedEvent': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Us
-ers\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(38,5): error C3668: 'SessionEventCallback::OnTopology
-Committed': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users
-\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(39,5): error C3668: 'SessionEventCallback::OnSharedEv
-ent': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\
-Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(40,5): error C3668: 'SessionEventCallback::OnTopology
-Change': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc
--1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(43,5): error C3668: 'SessionEventCallback::QueryInter
-face': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1
-\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(50,5): error C3668: 'SessionEventCallback::AddRef': e
-l método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\Documen
-ts\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(51,5): error C3668: 'SessionEventCallback::Release':
-el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\Docume
-nts\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(44,45): error C2065: 'IID_IMFMediaSessionEventCallbac
-k': identificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+  desktop_attach.cpp
+  Generando código...
+  Compilando...
+  wallpaper_window.cpp
+  workerw.cpp
+  Generando código...
 [ERROR] Fallo en el paso anterior. Revisa los mensajes.
