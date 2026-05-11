@@ -136,9 +136,11 @@ bool MpvPlayer::IsPlaying() const {
     if (!mpv_handle_) return false;
     
     int pause = 0;
-    if (_mpv_get_property(mpv_handle_, "pause", 1, &pause) == 0) { // 1 is MPV_FORMAT_INT
+    if (_mpv_get_property(mpv_handle_, "pause", MPV_FORMAT_INT, &pause) == 0) {
         return pause == 0;
     }
+    return false;
+}
     return false;
 }
 
@@ -156,7 +158,7 @@ bool MpvPlayer::IsLooping() const {
 float MpvPlayer::Position() const {
     if (!mpv_handle_) return 0.0f;
     double pos = 0.0;
-    if (_mpv_get_property(mpv_handle_, "time-pos", 2, &pos) == 0) { // 2 is MPV_FORMAT_DOUBLE
+    if (_mpv_get_property(mpv_handle_, "time-pos", MPV_FORMAT_DOUBLE, &pos) == 0) {
         return static_cast<float>(pos);
     }
     return 0.0f;
@@ -165,7 +167,7 @@ float MpvPlayer::Position() const {
 float MpvPlayer::Duration() const {
     if (!mpv_handle_) return 0.0f;
     double dur = 0.0;
-    if (_mpv_get_property(mpv_handle_, "duration", 2, &dur) == 0) {
+    if (_mpv_get_property(mpv_handle_, "duration", MPV_FORMAT_DOUBLE, &dur) == 0) {
         return static_cast<float>(dur);
     }
     return 0.0f;
@@ -179,13 +181,13 @@ void MpvPlayer::SetVolume(int volume) {
     if (!mpv_handle_) return;
     volume_ = std::clamp(volume, 0, 100);
     double vol_double = volume_ / 100.0;
-    _mpv_set_property(mpv_handle_, "volume", 2, &vol_double); // 2 is MPV_FORMAT_DOUBLE
+    _mpv_set_property(mpv_handle_, "volume", MPV_FORMAT_DOUBLE, &vol_double);
 }
 
 int MpvPlayer::GetVolume() const {
     if (!mpv_handle_) return volume_;
     double vol_double = 0.0;
-    if (_mpv_get_property(mpv_handle_, "volume", 2, &vol_double) == 0) {
+    if (_mpv_get_property(mpv_handle_, "volume", MPV_FORMAT_DOUBLE, &vol_double) == 0) {
         return static_cast<int>(vol_double * 100.0);
     }
     return volume_;
@@ -195,13 +197,13 @@ void MpvPlayer::SetMute(bool mute) {
     if (!mpv_handle_) return;
     muted_ = mute;
     int mute_val = mute ? 1 : 0;
-    _mpv_set_property(mpv_handle_, "mute", 1, &mute_val); // 1 is MPV_FORMAT_INT
+    _mpv_set_property(mpv_handle_, "mute", MPV_FORMAT_INT, &mute_val);
 }
 
 bool MpvPlayer::IsMuted() const {
     if (!mpv_handle_) return muted_;
     int mute_val = 0;
-    if (_mpv_get_property(mpv_handle_, "mute", 1, &mute_val) == 0) {
+    if (_mpv_get_property(mpv_handle_, "mute", MPV_FORMAT_INT, &mute_val) == 0) {
         return mute_val != 0;
     }
     return muted_;

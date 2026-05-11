@@ -9,6 +9,10 @@ class MpvPlayer {
 public:
     using EventCallback = std::function<void()>;
 
+    // MPV Property Formats
+    static constexpr int MPV_FORMAT_INT = 2;
+    static constexpr int MPV_FORMAT_DOUBLE = 4;
+
     MpvPlayer();
     ~MpvPlayer();
 
