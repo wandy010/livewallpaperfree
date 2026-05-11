@@ -14,9 +14,46 @@ bool MpvPlayer::LoadFunctions() {
     const char* dll_names[] = { "libmpv-2.dll", "mpv-1.dll", "libmpv.dll" };
     
     for (const char* name : dll_names) {
+        Logger::info("Attempting to load mpv DLL: " + std::string(name));
         mpv_dll_ = LoadLibraryA(name);
-        if (mpv_dll_) break;
+        if (mpv_dll_) {
+            Logger::info("Successfully loaded DLL: " + std::string(name));
+            break;
+        }
     }
+
+    if (!mpv_dll_) {
+        DWORD error = GetLastError();
+        Logger::error("Could not load any mpv DLL. Windows Error Code: " + std::to_string(error));
+        return false;
+    }
+
+    struct {
+        const char* name;
+        void** ptr;
+    } functions[] = {
+        {"mpv_create", (void**)&_mpv_create},
+        {"mpv_initialize", (void**)&_mpv_initialize},
+        {"mpv_terminate_destroy", (void**)&_mpv_terminate_destroy},
+        {"mpv_set_option_string", (void**)&_mpv_set_option_string},
+        {"mpv_command_string", (void**)&_mpv_command_string},
+        {"mpv_get_property", (void**)&_mpv_get_property},
+        {"mpv_set_property", (void**)&_mpv_set_property}
+    };
+
+    for (const auto& func : functions) {
+        void* addr = GetProcAddress(mpv_dll_, func.name);
+        if (!addr) {
+            Logger::error("Failed to find function " + std::string(func.name) + " in DLL. Error: " + std::to_string(GetLastError()));
+            FreeLibrary(mpv_dll_);
+            mpv_dll_ = nullptr;
+            return false;
+        }
+        *func.ptr = addr;
+    }
+
+    return true;
+}
 
     if (!mpv_dll_) {
         Logger::error("Could not load mpv DLL (libmpv-2.dll, mpv-1.dll or libmpv.dll)");
