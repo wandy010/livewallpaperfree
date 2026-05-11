@@ -3,17 +3,16 @@
 #include <string>
 #include <functional>
 #include <windows.h>
-#include <mfapi.h>
-#include <mfobjects.h>
-#include <mfreadwrite.h>
 
-class MFPlayer {
+// Forward declaration of the mpv handle to avoid including the header everywhere
+typedef struct mpv_handle_t* mpv_handle;
+
+class MpvPlayer {
 public:
-
     using EventCallback = std::function<void()>;
 
-    MFPlayer();
-    ~MFPlayer();
+    MpvPlayer();
+    ~MpvPlayer();
 
     bool Initialize();
     void Shutdown();
@@ -33,25 +32,20 @@ public:
     float Duration() const;
 
     void SetOnEndReached(EventCallback callback);
-    EventCallback GetOnEndReached() const { return on_end_reached_; }
     
-    // Audio control methods to replace libvlc_audio_... calls in AudioController
+    // Audio control methods
     void SetVolume(int volume);
     int GetVolume() const;
     void SetMute(bool mute);
     bool IsMuted() const;
 
 private:
-    void* session_ = nullptr; // IMFMediaSession*
-    void* source_reader_ = nullptr; // IMFSourceReader*
-    void* topology_ = nullptr; // IMFTopology*
-    
+    mpv_handle handle_ = nullptr;
     HWND output_hwnd_ = nullptr;
     bool looping_ = false;
     int volume_ = 100;
     bool muted_ = false;
     EventCallback on_end_reached_;
 
-    // Helper to handle MF events
-    static void OnMediaEvent(void* session, void* user_data);
+    void ProcessEvents();
 };

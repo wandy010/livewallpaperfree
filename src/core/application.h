@@ -12,7 +12,7 @@
 #include "message_loop.h"
 #include "config/config_manager.h"
 #include "wallpaper/wallpaper_window.h"
-#include "video/mf_player.h"
+#include "video/mpv_player.h"
 #include "video/media_controller.h"
 #include "video/audio_controller.h"
 #include "ui/tray_icon.h"
@@ -34,7 +34,7 @@ public:
     HINSTANCE GetInstance() const;
     ConfigManager& GetConfig();
     WallpaperWindow& GetWallpaperWindow();
-    MFPlayer& GetPlayer();
+    MpvPlayer& GetPlayer();
     MediaController& GetMediaControl();
     AudioController& GetAudioControl();
 
@@ -45,7 +45,7 @@ private:
     ConfigManager config_;
     WallpaperWindow wallpaper_window_;
 
-    MFPlayer mf_player_;
+    MpvPlayer mpv_player_;
     MediaController media_control_;
     AudioController audio_control_;
 

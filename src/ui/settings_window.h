@@ -11,14 +11,14 @@
 #include <string>
 
 class ConfigManager;
-class MFPlayer;
+class MpvPlayer;
 class AudioController;
 class VolumeSlider;
 
 class SettingsWindow {
 public:
     SettingsWindow(HINSTANCE hInstance, HWND parent_hwnd,
-                   ConfigManager& config, MFPlayer& player,
+                   ConfigManager& config, MpvPlayer& player,
                    AudioController& audio);
     ~SettingsWindow();
 
@@ -31,7 +31,7 @@ private:
     HWND parent_hwnd_;
     HWND hwnd_ = nullptr;
     ConfigManager& config_;
-    MFPlayer& player_;
+    MpvPlayer& player_;
     AudioController& audio_;
     VolumeSlider* slider_ = nullptr;
 

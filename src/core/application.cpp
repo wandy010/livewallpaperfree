@@ -74,22 +74,22 @@ bool Application::InitWallpaper() {
 bool Application::InitVideo() {
     Logger::info("Starting video engine...");
 
-    if (!mf_player_.Initialize()) return false;
+    if (!mpv_player_.Initialize()) return false;
 
-    mf_player_.SetOutputWindow(wallpaper_window_.Handle());
+    mpv_player_.SetOutputWindow(wallpaper_window_.Handle());
 
     std::string video_path = config_.video_path();
-    if (!mf_player_.LoadMedia(video_path)) {
+    if (!mpv_player_.LoadMedia(video_path)) {
         Logger::warn("Video file not found: " + video_path);
         return false;
     }
 
-    mf_player_.SetLooping(true);
+    mpv_player_.SetLooping(true);
 
     audio_control_.SetVolume(config_.volume());
     audio_control_.SetMute(config_.mute());
 
-    if (!mf_player_.Play()) return false;
+    if (!mpv_player_.Play()) return false;
 
     Logger::info("Video playback started: " + video_path);
     return true;
@@ -141,7 +141,7 @@ void Application::ShowSettings() {
 
     settings_window_ = new SettingsWindow(
         hInstance_, window_.Handle(),
-        config_    , mf_player_, audio_control_);
+        config_    , mpv_player_, audio_control_);
 
     settings_window_->Show();
 }
@@ -178,15 +178,15 @@ void Application::CheckFullscreen() {
         was_obscured_ = obscured;
         Logger::info(std::string("Pausing — ") +
                      (fullscreen ? "fullscreen" : "obscured"));
-        if (mf_player_.IsPlaying()) {
-            mf_player_.Pause();
+        if (mpv_player_.IsPlaying()) {
+            mpv_player_.Pause();
         }
     } else if (!should_pause && was_fullscreen_) {
         was_fullscreen_ = false;
         was_obscured_ = false;
         Logger::info("Resuming — desktop visible");
-        if (!mf_player_.IsPlaying()) {
-            mf_player_.Play();
+        if (!mpv_player_.IsPlaying()) {
+            mpv_player_.Play();
         }
     }
 }
@@ -202,7 +202,7 @@ void Application::Shutdown() {
     tray_icon_.Destroy();
     delete settings_window_;
     settings_window_ = nullptr;
-    mf_player_.Shutdown();
+    mpv_player_.Shutdown();
     wallpaper_window_.Destroy();
     window_.Destroy();
 }
@@ -219,8 +219,8 @@ WallpaperWindow& Application::GetWallpaperWindow() {
     return wallpaper_window_;
 }
 
-MFPlayer& Application::GetPlayer() {
-    return mf_player_;
+MpvPlayer& Application::GetPlayer() {
+    return mpv_player_;
 }
 
 MediaController& Application::GetMediaControl() {

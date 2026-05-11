@@ -1,8 +1,8 @@
 #include "media_controller.h"
-#include "mf_player.h"
+#include "mpv_player.h"
 #include "utils/logger.h"
 
-MediaController::MediaController(MFPlayer& player)
+MediaController::MediaController(MpvPlayer& player)
     : player_(player) {}
 
 void MediaController::PlayPause() {

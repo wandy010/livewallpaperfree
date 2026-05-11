@@ -2,11 +2,11 @@
 
 #include <string>
 
-class MFPlayer;
+class MpvPlayer;
 
 class MediaController {
 public:
-    explicit MediaController(MFPlayer& player);
+    explicit MediaController(MpvPlayer& player);
 
     void PlayPause();
     void Play();
@@ -26,5 +26,5 @@ public:
     bool LoadFile(const std::string& path);
 
 private:
-    MFPlayer& player_;
+    MpvPlayer& player_;
 };

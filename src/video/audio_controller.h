@@ -1,10 +1,10 @@
 #pragma once
 
-class MFPlayer;
+class MpvPlayer;
 
 class AudioController {
 public:
-    explicit AudioController(MFPlayer& player);
+    explicit AudioController(MpvPlayer& player);
 
     void SetVolume(int volume);
     int GetVolume() const;
@@ -14,6 +14,6 @@ public:
     void ToggleMute();
 
 private:
-    MFPlayer& player_;
+    MpvPlayer& player_;
     int last_volume_ = 30;
 };

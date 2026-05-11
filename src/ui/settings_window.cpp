@@ -1,7 +1,7 @@
 #include "settings_window.h"
 #include "volume_slider.h"
 #include "config/config_manager.h"
-#include "video/mf_player.h"
+#include "video/mpv_player.h"
 #include "video/audio_controller.h"
 #include "utils/logger.h"
 
@@ -10,7 +10,7 @@
 #include <algorithm>
 
 SettingsWindow::SettingsWindow(HINSTANCE hInstance, HWND parent_hwnd,
-                                ConfigManager& config, MFPlayer& player,
+                                ConfigManager& config, MpvPlayer& player,
                                 AudioController& audio)
     : hInstance_(hInstance)
     , parent_hwnd_(parent_hwnd)

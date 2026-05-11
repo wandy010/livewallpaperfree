@@ -1,10 +1,10 @@
 #include "audio_controller.h"
-#include "mf_player.h"
+#include "mpv_player.h"
 #include "utils/logger.h"
 
 #include <algorithm>
 
-AudioController::AudioController(MFPlayer& player)
+AudioController::AudioController(MpvPlayer& player)
     : player_(player) {}
 
 void AudioController::SetVolume(int volume) {
