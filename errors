@@ -1,3 +1,5 @@
+C:\Windows\System32>cd C:\Users\pc-1\Documents\livewallpaperfree
+
 C:\Users\pc-1\Documents\livewallpaperfree>scripts\build.bat
 [INFO] Compilando como x64
 [STEP] Configurando con CMake (-A x64)...
@@ -14,7 +16,7 @@ C:\Users\pc-1\Documents\livewallpaperfree>scripts\build.bat
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (13.4s)
+-- Configuring done (14.5s)
 -- Generating done (0.1s)
 -- Build files have been written to: C:/Users/pc-1/Documents/livewallpaperfree/build
 [STEP] Compilando...
@@ -104,44 +106,9 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\mfreadwrite.h(120
 e.vcxproj]
   (compilando archivo de origen "../src/video/mf_player.cpp")
 
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(18,37): error C2504: 'IMFMediaSessionEventCallback':
-clase base sin definir [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(23,26): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(27,39): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(38,36): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(39,30): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(40,33): error C2061: error de sintaxis: identificador
- 'IMFMediaSession' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(23,5): error C3668: 'SessionEventCallback::OnStopped'
-: el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\Docu
-ments\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(27,5): error C3668: 'SessionEventCallback::OnPlayback
-StoppedEvent': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Us
-ers\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(38,5): error C3668: 'SessionEventCallback::OnTopology
-Committed': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users
-\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(39,5): error C3668: 'SessionEventCallback::OnSharedEv
-ent': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\
-Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(40,5): error C3668: 'SessionEventCallback::OnTopology
-Change': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc
--1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(43,5): error C3668: 'SessionEventCallback::QueryInter
-face': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1
-\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(50,5): error C3668: 'SessionEventCallback::AddRef': e
-l método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\Documen
-ts\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(51,5): error C3668: 'SessionEventCallback::Release':
-el método con el especificador de invalidación 'override' no invalidó ningún método de clase base [C:\Users\pc-1\Docume
-nts\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(44,45): error C2065: 'IID_IMFMediaSessionEventCallbac
-k': identificador no declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mf_player.cpp(10,10): error C1083: No se puede abrir el archivo inc
+luir: 'mfuuid.h': No such file or directory [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxpr
+oj]
   Generando código...
   Compilando...
   wallpaper_window.cpp
