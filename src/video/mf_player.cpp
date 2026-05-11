@@ -4,9 +4,10 @@
 #include <algorithm>
 #include <windows.h>
 #include <mfapi.h>
-#include <mfreadwrite.h>
 #include <mfobjects.h>
+#include <mfreadwrite.h>
 #include <mferror.h>
+#include <mfuuid.h>
 #include <shlwapi.h>
 
 #pragma comment(lib, "mfplat")
