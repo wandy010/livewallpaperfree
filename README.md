@@ -42,7 +42,7 @@ Para evitar dependencias pesadas y errores de compilación, el programa utiliza 
 ### ⚠️ Paso Final Obligatorio (La DLL)
 Para que el video funcione, debes colocar la librería de mpv en la carpeta del ejecutable:
 1. Descarga el paquete **`mpv-dev-x86_64`** desde los builds de shinchiro.
-2. Copia el archivo **`libmpv-2.dll`** y pégalo en:
+2. Copia los archivos **`libmpv-2.dll`**, **`libmpv.dll.a`** y pégalos en:
    `build\\Release\\libmpv-2.dll`
 
 ---
