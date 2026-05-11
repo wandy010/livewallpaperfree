@@ -1,14 +1,13 @@
-#include "mf_player.h"
-#include "utils/logger.h"
-
-#include <algorithm>
 #include <windows.h>
 #include <mfapi.h>
-#include <mfobjects.h>
 #include <mfreadwrite.h>
+#include <mfobjects.h>
 #include <mferror.h>
-#include <mfuuid.h>
 #include <shlwapi.h>
+
+#include "mf_player.h"
+#include "utils/logger.h"
+#include <algorithm>
 
 #pragma comment(lib, "mfplat")
 #pragma comment(lib, "mfreadwrite")
