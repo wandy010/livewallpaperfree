@@ -1,48 +1,17 @@
--- Generating done (0.1s)
--- Build files have been written to: C:/Users/pc-1/Documents/livewallpaperfree/build
-[STEP] Compilando...
-Versión de MSBuild 17.14.40+3e7442088 para .NET Framework
-
-  1>Checking Build System
-  Building Custom Rule C:/Users/pc-1/Documents/livewallpaperfree/CMakeLists.txt
-  config_manager.cpp
-  json_loader.cpp
-  application.cpp
-  message_loop.cpp
-C:\Users\pc-1\Documents\livewallpaperfree\src\core\application.cpp(14,22): error C2065: 'mf_player_': identificador no
-declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\core\application.cpp(15,22): error C2065: 'mf_player_': identificador no
-declarado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-  window.cpp
-  main.cpp
-  fullscreen_detector.cpp
-  monitor_manager.cpp
-  process_monitor.cpp
-  visibility_detector.cpp
-  settings_window.cpp
-  tray_icon.cpp
-  volume_slider.cpp
-  file_utils.cpp
-  logger.cpp
-  timers.cpp
-  audio_controller.cpp
-  media_controller.cpp
-  mpv_player.cpp
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(97,32): error C2065: 'mpv_': identificador no declar
-ado [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,13): error C2146: error de sintaxis: falta ')' de
-lante del identificador 'mpv_handle_' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,13): error C2146: error de sintaxis: falta ';' de
-lante del identificador 'mpv_handle_' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,48): error C2059: error de sintaxis: ')' [C:\User
-s\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
-C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(98,46): warning C4834: Descartar el valor de retorno
- de la función con el atributo [[nodiscard]] [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxp
-roj]
-  desktop_attach.cpp
-  Generando código...
-  Compilando...
-  wallpaper_window.cpp
-  workerw.cpp
-  Generando código...
-[ERROR] Fallo en el paso anterior. Revisa los mensajes.
+[INFO] [2026-05-11 10:48:12] ===== WallpaperEngineClone =====
+[INFO] [2026-05-11 10:48:12] Working directory: C:\Users\pc-1\Documents\livewallpaperfree
+[INFO] [2026-05-11 10:48:12] assets/config/settings.json: FOUND
+[INFO] [2026-05-11 10:48:12] Initializing application...
+[INFO] [2026-05-11 10:48:12] Config loaded from: assets/config/settings.json
+[INFO] [2026-05-11 10:48:12] Window created: WallpaperEngineClone
+[INFO] [2026-05-11 10:48:12] Setting up wallpaper...
+[INFO] [2026-05-11 10:48:12] Preparing desktop wallpaper host...
+[INFO] [2026-05-11 10:48:12] Setting up wallpaper host (WorkerW) for modern Windows...
+[INFO] [2026-05-11 10:48:12] WorkerW triggered via Progman 0x052C
+[WARN] [2026-05-11 10:48:14] Could not find WorkerW host ÔÇö falling back to Progman
+[INFO] [2026-05-11 10:48:14] Wallpaper host ready: Progman
+[INFO] [2026-05-11 10:48:14] Desktop wallpaper host ready
+[ERROR] [2026-05-11 10:48:14] Failed to create wallpaper window
+[ERROR] [2026-05-11 10:48:14] Failed to create wallpaper window
+[ERROR] [2026-05-11 10:48:14] Failed to initialize wallpaper surface
+[ERROR] [2026-05-11 10:48:14] Application initialization failed
