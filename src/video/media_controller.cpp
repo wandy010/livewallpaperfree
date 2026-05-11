@@ -2,7 +2,7 @@
 #include "mf_player.h"
 #include "utils/logger.h"
 
-MediaController::MediaController(VLCPlayer& player)
+MediaController::MediaController(MFPlayer& player)
     : player_(player) {}
 
 void MediaController::PlayPause() {

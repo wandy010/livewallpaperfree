@@ -10,8 +10,8 @@
 #include <algorithm>
 
 SettingsWindow::SettingsWindow(HINSTANCE hInstance, HWND parent_hwnd,
-                               ConfigManager& config, VLCPlayer& player,
-                               AudioController& audio)
+                                ConfigManager& config, MFPlayer& player,
+                                AudioController& audio)
     : hInstance_(hInstance)
     , parent_hwnd_(parent_hwnd)
     , config_(config)

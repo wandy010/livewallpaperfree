@@ -1,6 +1,7 @@
 #include "mf_player.h"
 #include "utils/logger.h"
 
+#include <algorithm>
 #include <windows.h>
 #include <mfapi.h>
 #include <mfreadwrite.h>

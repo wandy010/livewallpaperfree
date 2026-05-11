@@ -29,6 +29,7 @@ public:
     float Duration() const;
 
     void SetOnEndReached(EventCallback callback);
+    EventCallback GetOnEndReached() const { return on_end_reached_; }
     
     // Audio control methods to replace libvlc_audio_... calls in AudioController
     void SetVolume(int volume);
