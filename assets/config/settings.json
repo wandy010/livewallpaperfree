@@ -1,0 +1,8 @@
+{
+  "video": "assets/videos/wallpaper.mp4",
+  "volume": 30,
+  "mute": false,
+  "pause_on_fullscreen": true,
+  "pause_when_hidden": true,
+  "fps_limit": 30
+}
