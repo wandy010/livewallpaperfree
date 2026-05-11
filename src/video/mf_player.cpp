@@ -1,13 +1,9 @@
-#include <windows.h>
-#include <mfapi.h>
-#include <mfreadwrite.h>
-#include <mfobjects.h>
-#include <mferror.h>
-#include <shlwapi.h>
-
 #include "mf_player.h"
 #include "utils/logger.h"
+
 #include <algorithm>
+#include <mferror.h>
+#include <shlwapi.h>
 
 #pragma comment(lib, "mfplat")
 #pragma comment(lib, "mfreadwrite")
@@ -41,7 +37,7 @@ public:
     
     // Required for IMFUnknown
     STDMETHOD(QueryInterface)(REFIID riid, void** ppv) override {
-        if (riid == IID_IUnknown || riid == IID_IMFMediaSessionEventCallback) {
+        if (riid == IID_IUnknown || riid == __uuidof(IMFMediaSessionEventCallback)) {
             *ppv = this;
             return S_OK;
         }

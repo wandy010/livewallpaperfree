@@ -3,9 +3,13 @@
 #include <string>
 #include <functional>
 #include <windows.h>
+#include <mfapi.h>
+#include <mfobjects.h>
+#include <mfreadwrite.h>
 
 class MFPlayer {
 public:
+
     using EventCallback = std::function<void()>;
 
     MFPlayer();
