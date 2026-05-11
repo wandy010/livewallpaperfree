@@ -141,8 +141,6 @@ bool MpvPlayer::IsPlaying() const {
     }
     return false;
 }
-    return false;
-}
 
 void MpvPlayer::SetLooping(bool loop) {
     if (!mpv_handle_) return;
