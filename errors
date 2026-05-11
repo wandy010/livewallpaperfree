@@ -1,17 +1,32 @@
-[INFO] [2026-05-11 10:48:12] ===== WallpaperEngineClone =====
-[INFO] [2026-05-11 10:48:12] Working directory: C:\Users\pc-1\Documents\livewallpaperfree
-[INFO] [2026-05-11 10:48:12] assets/config/settings.json: FOUND
-[INFO] [2026-05-11 10:48:12] Initializing application...
-[INFO] [2026-05-11 10:48:12] Config loaded from: assets/config/settings.json
-[INFO] [2026-05-11 10:48:12] Window created: WallpaperEngineClone
-[INFO] [2026-05-11 10:48:12] Setting up wallpaper...
-[INFO] [2026-05-11 10:48:12] Preparing desktop wallpaper host...
-[INFO] [2026-05-11 10:48:12] Setting up wallpaper host (WorkerW) for modern Windows...
-[INFO] [2026-05-11 10:48:12] WorkerW triggered via Progman 0x052C
-[WARN] [2026-05-11 10:48:14] Could not find WorkerW host ÔÇö falling back to Progman
-[INFO] [2026-05-11 10:48:14] Wallpaper host ready: Progman
-[INFO] [2026-05-11 10:48:14] Desktop wallpaper host ready
-[ERROR] [2026-05-11 10:48:14] Failed to create wallpaper window
-[ERROR] [2026-05-11 10:48:14] Failed to create wallpaper window
-[ERROR] [2026-05-11 10:48:14] Failed to initialize wallpaper surface
-[ERROR] [2026-05-11 10:48:14] Application initialization failed
+[INFO] [2026-05-11 11:09:02] ===== WallpaperEngineClone =====
+[INFO] [2026-05-11 11:09:02] Working directory: C:\Users\pc-1\Documents\livewallpaperfree\build\Release
+[INFO] [2026-05-11 11:09:02] assets/config/settings.json: FOUND
+[INFO] [2026-05-11 11:09:02] Initializing application...
+[INFO] [2026-05-11 11:09:02] Config loaded from: assets/config/settings.json
+[INFO] [2026-05-11 11:09:02] Window created: WallpaperEngineClone
+[INFO] [2026-05-11 11:09:02] Setting up wallpaper...
+[INFO] [2026-05-11 11:09:02] Preparing desktop wallpaper host...
+[INFO] [2026-05-11 11:09:02] Setting up wallpaper host (WorkerW) for modern Windows...
+[INFO] [2026-05-11 11:09:02] WorkerW triggered via Progman 0x052C
+[WARN] [2026-05-11 11:09:03] Could not find WorkerW host ÔÇö falling back to Progman
+[INFO] [2026-05-11 11:09:03] Wallpaper host ready: Progman
+[INFO] [2026-05-11 11:09:03] Desktop wallpaper host ready
+[INFO] [2026-05-11 11:09:03] Wallpaper window created and attached to host
+[INFO] [2026-05-11 11:09:03] Wallpaper surface ready
+[INFO] [2026-05-11 11:09:03] Starting video engine...
+[ERROR] [2026-05-11 11:09:03] Could not load mpv DLL (libmpv-2.dll, mpv-1.dll or libmpv.dll)
+[WARN] [2026-05-11 11:09:03] Video playback not available ÔÇö wallpaper will be blank
+[INFO] [2026-05-11 11:09:03] Tray icon created
+[INFO] [2026-05-11 11:09:03] Tray balloon: WallpaperEngineClone
+[INFO] [2026-05-11 11:09:03] Tray icon active
+[INFO] [2026-05-11 11:09:03] Fullscreen detection timer started (400ms)
+[INFO] [2026-05-11 11:09:03] Application initialized successfully
+[INFO] [2026-05-11 11:09:03] Config:
+[INFO] [2026-05-11 11:09:03]   Video:         assets/videos/wallpaper.mp4
+[INFO] [2026-05-11 11:09:03]   Volume:        30
+[INFO] [2026-05-11 11:09:03]   Mute:          no
+[INFO] [2026-05-11 11:09:03]   Pause on FS:   yes
+[INFO] [2026-05-11 11:09:03]   Pause hidden:  yes
+[INFO] [2026-05-11 11:09:03]   FPS limit:     30
+[INFO] [2026-05-11 11:09:03] Wallpaper running ÔÇö right-click tray icon to configure
+[INFO] [2026-05-11 11:09:03] Entering message loop...
