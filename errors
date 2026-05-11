@@ -1,0 +1,219 @@
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull>scripts\build.bat
+[STEP] Configurando...
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.19044.
+-- Configuring done (0.1s)
+-- Generating done (0.2s)
+-- Build files have been written to: C:/Users/pc-1/Documents/WallpaperEngineCloneFull/build
+[STEP] Compilando...
+Versión de MSBuild 17.14.40+3e7442088 para .NET Framework
+
+  1>Checking Build System
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): wa
+rning MSB8028: El directorio intermedio (WallpaperEngineClone.dir\Release\) contiene archivos compartidos de otro proye
+cto (WallpaperEngineClone.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación. [C
+:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  Building Custom Rule C:/Users/pc-1/Documents/WallpaperEngineCloneFull/CMakeLists.txt
+  config_manager.cpp
+  json_loader.cpp
+  application.cpp
+  message_loop.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/application.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  window.cpp
+  (compilando archivo de origen "../src/core/application.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/application.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/application.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\core\application.cpp(234,41): error C2248: 'TrayIcon::CreateContex
+tMenu': no se puede obtener acceso al miembro private miembro declarado en la clase 'TrayIcon' [C:\Users\pc-1\Documents
+\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\ui\tray_icon.h(43,11):
+      vea la declaración de 'TrayIcon::CreateContextMenu'
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\ui\tray_icon.h(15,7):
+      vea la declaración de 'TrayIcon'
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/core/window.cpp")
+
+  main.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/main.cpp")
+
+  fullscreen_detector.cpp
+  monitor_manager.cpp
+  process_monitor.cpp
+  visibility_detector.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\system\process_monitor.cpp(6,42): error C2039: "K32EnumProcesses":
+ no es un miembro de "ProcessMonitor" [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxp
+roj]
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\system\process_monitor.h(20,7):
+      vea la declaración de 'ProcessMonitor'
+
+  settings_window.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/settings_window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/settings_window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/settings_window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/settings_window.cpp")
+
+  tray_icon.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/tray_icon.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/tray_icon.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/tray_icon.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/tray_icon.cpp")
+
+  volume_slider.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/volume_slider.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/volume_slider.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/volume_slider.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/ui/volume_slider.cpp")
+
+  file_utils.cpp
+  logger.cpp
+  timers.cpp
+  audio_controller.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\audio_controller.cpp(15,45): error C2039: "Handle": no es un
+ miembro de "VLCPlayer" [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\vlc_player.h(10,7):
+      vea la declaración de 'VLCPlayer'
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\audio_controller.cpp(23,45): error C2039: "Handle": no es un
+ miembro de "VLCPlayer" [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\vlc_player.h(10,7):
+      vea la declaración de 'VLCPlayer'
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\audio_controller.cpp(35,45): error C2039: "Handle": no es un
+ miembro de "VLCPlayer" [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\vlc_player.h(10,7):
+      vea la declaración de 'VLCPlayer'
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\audio_controller.cpp(43,45): error C2039: "Handle": no es un
+ miembro de "VLCPlayer" [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+      C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\video\vlc_player.h(10,7):
+      vea la declaración de 'VLCPlayer'
+
+  media_controller.cpp
+  vlc_player.cpp
+  desktop_attach.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/desktop_attach.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/desktop_attach.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/desktop_attach.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  Generando código...
+  (compilando archivo de origen "../src/wallpaper/desktop_attach.cpp")
+
+  Compilando...
+  wallpaper_window.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/wallpaper_window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/wallpaper_window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/wallpaper_window.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/wallpaper_window.cpp")
+
+  workerw.cpp
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2143: error de sintaxis: falta '}' de
+lante de 'constante' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/workerw.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(11,5): error C2059: error de sintaxis: 'constante'
+[C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/workerw.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/workerw.cpp")
+
+C:\Users\pc-1\Documents\WallpaperEngineCloneFull\src\utils\logger.h(12,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\WallpaperEngineCloneFull\build\WallpaperEngineClone.vcxproj]
+  (compilando archivo de origen "../src/wallpaper/workerw.cpp")
+
+  Generando código...
+[ERROR] Fallo en el paso anterior. Revisa los mensajes.
