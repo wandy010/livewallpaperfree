@@ -1,38 +1,24 @@
-INFO] [2026-05-11 11:36:31] ===== WallpaperEngineClone =====
-[INFO] [2026-05-11 11:36:31] Working directory: C:\Users\pc-1\Documents\livewallpaperfree\build\Release
-[INFO] [2026-05-11 11:36:31] assets/config/settings.json: FOUND
-[INFO] [2026-05-11 11:36:31] Initializing application...
-[WARN] [2026-05-11 11:36:31] Config file empty or not found, using defaults: assets/config/settings.json
-[WARN] [2026-05-11 11:36:31] Config file empty or not found, using defaults: ../../assets/config/settings.json
-[WARN] [2026-05-11 11:36:31] Using default configuration
-[INFO] [2026-05-11 11:36:31] Window created: WallpaperEngineClone
-[INFO] [2026-05-11 11:36:31] Setting up wallpaper...
-[INFO] [2026-05-11 11:36:31] Preparing desktop wallpaper host...
-[INFO] [2026-05-11 11:36:31] Setting up wallpaper host (WorkerW) for modern Windows...
-[INFO] [2026-05-11 11:36:31] WorkerW triggered via Progman 0x052C
-[WARN] [2026-05-11 11:36:32] Could not find WorkerW host — falling back to Progman
-[INFO] [2026-05-11 11:36:32] Wallpaper host ready: Progman
-[INFO] [2026-05-11 11:36:32] Desktop wallpaper host ready
-[INFO] [2026-05-11 11:36:32] Wallpaper window created and attached to host
-[INFO] [2026-05-11 11:36:32] Wallpaper surface ready
-[INFO] [2026-05-11 11:36:32] Starting video engine...
-[INFO] [2026-05-11 11:36:32] Attempting to load mpv DLL: libmpv-2.dll
-[INFO] [2026-05-11 11:36:32] Attempting to load mpv DLL: mpv-1.dll
-[INFO] [2026-05-11 11:36:32] Attempting to load mpv DLL: libmpv.dll
-[ERROR] [2026-05-11 11:36:32] Could not load any mpv DLL. Windows Error Code: 126
-[WARN] [2026-05-11 11:36:32] Video playback not available — wallpaper will be blank
-[INFO] [2026-05-11 11:36:32] Tray icon created
-[INFO] [2026-05-11 11:36:32] Tray balloon: WallpaperEngineClone
-[INFO] [2026-05-11 11:36:32] Tray icon active
-[INFO] [2026-05-11 11:36:32] Fullscreen detection timer started (400ms)
-[INFO] [2026-05-11 11:36:32] Application initialized successfully
-[INFO] [2026-05-11 11:36:32] Config:
-[INFO] [2026-05-11 11:36:32]   Video:         assets/videos/wallpaper.mp4
-[INFO] [2026-05-11 11:36:32]   Volume:        30
-[INFO] [2026-05-11 11:36:32]   Mute:          no
-[INFO] [2026-05-11 11:36:32]   Pause on FS:   yes
-[INFO] [2026-05-11 11:36:32]   Pause hidden:  yes
-[INFO] [2026-05-11 11:36:32]   FPS limit:     30
-[INFO] [2026-05-11 11:36:32] Wallpaper running — right-click tray icon to configure
-[INFO] [2026-05-11 11:36:32] Entering message loop...
-[INFO] [2026-05-11 11:36:43] Pausing — obscured
+[INFO] [2026-05-11 11:45:47] ===== WallpaperEngineClone =====
+[INFO] [2026-05-11 11:45:47] Working directory: C:\Users\pc-1\Documents\livewallpaperfree\build\Release
+[INFO] [2026-05-11 11:45:47] assets/config/settings.json: FOUND
+[INFO] [2026-05-11 11:45:47] Initializing application...
+[WARN] [2026-05-11 11:45:47] Config file empty or not found, using defaults: assets/config/settings.json
+[WARN] [2026-05-11 11:45:47] Config file empty or not found, using defaults: ../../assets/config/settings.json
+[WARN] [2026-05-11 11:45:47] Using default configuration
+[INFO] [2026-05-11 11:45:48] Window created: WallpaperEngineClone
+[INFO] [2026-05-11 11:45:48] Setting up wallpaper...
+[INFO] [2026-05-11 11:45:48] Preparing desktop wallpaper host...
+[INFO] [2026-05-11 11:45:48] Setting up wallpaper host (WorkerW) for modern Windows...
+[INFO] [2026-05-11 11:45:48] WorkerW triggered via Progman 0x052C
+[WARN] [2026-05-11 11:45:49] Could not find WorkerW host — falling back to Progman
+[INFO] [2026-05-11 11:45:49] Wallpaper host ready: Progman
+[INFO] [2026-05-11 11:45:49] Desktop wallpaper host ready
+[INFO] [2026-05-11 11:45:49] Wallpaper window created and attached to host
+[INFO] [2026-05-11 11:45:49] Wallpaper surface ready
+[INFO] [2026-05-11 11:45:49] Starting video engine...
+[INFO] [2026-05-11 11:45:49] Attempting to load mpv DLL: libmpv-2.dll
+[INFO] [2026-05-11 11:45:49] Successfully loaded DLL: libmpv-2.dll
+[INFO] [2026-05-11 11:45:49] mpv player initialized (dynamically)
+[INFO] [2026-05-11 11:45:49] Media loaded (mpv): assets/videos/wallpaper.mp4
+[INFO] [2026-05-11 11:45:49] mpv Looping enabled
+[INFO] [2026-05-11 11:45:49] Volume set to 30
