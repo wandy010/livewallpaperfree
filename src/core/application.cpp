@@ -11,8 +11,8 @@ Application::Application(HINSTANCE hInstance)
     : hInstance_(hInstance)
     , window_(hInstance)
     , wallpaper_window_(hInstance)
-    , media_control_(mf_player_)
-    , audio_control_(mf_player_)
+    , media_control_(mpv_player_)
+    , audio_control_(mpv_player_)
     , tray_icon_(hInstance) {}
 
 Application::~Application() {

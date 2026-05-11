@@ -94,8 +94,7 @@ void MpvPlayer::SetOutputWindow(void* hwnd) {
     if (mpv_handle_ && hwnd) {
         output_hwnd_ = (HWND)hwnd;
         std::string wid_str = std::to_string((uintptr_t)hwnd);
-        _mpv_set_option_string(mpv_//_ corregir
-            mpv_handle_, "wid", wid_str.c_str());
+        _mpv_set_option_string(mpv_handle_, "wid", wid_str.c_str());
     }
 }
 
