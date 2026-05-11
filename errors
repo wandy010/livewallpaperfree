@@ -1,24 +1,14 @@
-[INFO] [2026-05-11 11:45:47] ===== WallpaperEngineClone =====
-[INFO] [2026-05-11 11:45:47] Working directory: C:\Users\pc-1\Documents\livewallpaperfree\build\Release
-[INFO] [2026-05-11 11:45:47] assets/config/settings.json: FOUND
-[INFO] [2026-05-11 11:45:47] Initializing application...
-[WARN] [2026-05-11 11:45:47] Config file empty or not found, using defaults: assets/config/settings.json
-[WARN] [2026-05-11 11:45:47] Config file empty or not found, using defaults: ../../assets/config/settings.json
-[WARN] [2026-05-11 11:45:47] Using default configuration
-[INFO] [2026-05-11 11:45:48] Window created: WallpaperEngineClone
-[INFO] [2026-05-11 11:45:48] Setting up wallpaper...
-[INFO] [2026-05-11 11:45:48] Preparing desktop wallpaper host...
-[INFO] [2026-05-11 11:45:48] Setting up wallpaper host (WorkerW) for modern Windows...
-[INFO] [2026-05-11 11:45:48] WorkerW triggered via Progman 0x052C
-[WARN] [2026-05-11 11:45:49] Could not find WorkerW host — falling back to Progman
-[INFO] [2026-05-11 11:45:49] Wallpaper host ready: Progman
-[INFO] [2026-05-11 11:45:49] Desktop wallpaper host ready
-[INFO] [2026-05-11 11:45:49] Wallpaper window created and attached to host
-[INFO] [2026-05-11 11:45:49] Wallpaper surface ready
-[INFO] [2026-05-11 11:45:49] Starting video engine...
-[INFO] [2026-05-11 11:45:49] Attempting to load mpv DLL: libmpv-2.dll
-[INFO] [2026-05-11 11:45:49] Successfully loaded DLL: libmpv-2.dll
-[INFO] [2026-05-11 11:45:49] mpv player initialized (dynamically)
-[INFO] [2026-05-11 11:45:49] Media loaded (mpv): assets/videos/wallpaper.mp4
-[INFO] [2026-05-11 11:45:49] mpv Looping enabled
-[INFO] [2026-05-11 11:45:49] Volume set to 30
+  mpv_player.cpp
+  desktop_attach.cpp
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(144,5): error C2059: error de sintaxis: 'return' [C:
+\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(145,1): error C2059: error de sintaxis: '}' [C:\User
+s\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(145,1): error C2143: error de sintaxis: falta ';' de
+lante de '}' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(147,39): error C2143: error de sintaxis: falta ';' d
+elante de '{' [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj]
+C:\Users\pc-1\Documents\livewallpaperfree\src\video\mpv_player.cpp(147,39): error C2447: '{': falta el encabezado de fu
+nción (¿lista formal de estilo anterior?) [C:\Users\pc-1\Documents\livewallpaperfree\build\WallpaperEngineClone.vcxproj
+]
+  Generando código...
