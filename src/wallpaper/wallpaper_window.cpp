@@ -35,13 +35,15 @@ bool WallpaperWindow::Create(HWND parent_hwnd, int monitor_index) {
     int screen_w = GetSystemMetrics(SM_CXVIRTUALSCREEN);
     int screen_h = GetSystemMetrics(SM_CYVIRTUALSCREEN);
 
+    // Use WS_POPUP instead of WS_CHILD to avoid creation failures with Progman/WorkerW
+    // We will then use SetParent to attach it to the host
     hwnd_ = CreateWindowExA(
         WS_EX_NOACTIVATE | WS_EX_LAYERED | WS_EX_TRANSPARENT,
         "WallpaperEngineClone_Wallpaper",
         "Wallpaper",
-        WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS,
+        WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS,
         screen_x, screen_y, screen_w, screen_h,
-        parent_hwnd_,
+        nullptr, // Create as top-level first
         nullptr,
         hInstance_,
         nullptr
@@ -52,9 +54,14 @@ bool WallpaperWindow::Create(HWND parent_hwnd, int monitor_index) {
         return false;
     }
 
+    // Now attach it to the host window
+    if (parent_hwnd_) {
+        SetParent(hwnd_, parent_hwnd_);
+    }
+
     SetLayeredWindowAttributes(hwnd_, 0, 255, LWA_ALPHA);
 
-    Logger::info("Wallpaper window created (covers virtual desktop)");
+    Logger::info("Wallpaper window created and attached to host");
     return true;
 }
 
